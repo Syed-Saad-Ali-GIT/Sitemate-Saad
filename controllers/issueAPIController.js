@@ -33,7 +33,32 @@ async function getIssueByID(request, response, id) {
 	}
 }
 
+
+async function deleteIssue( request, response, id){
+	try{
+		const issue = await IssueModel.getByID(id)
+		if (!issue) {
+			response.writeHead(404, {
+				'Content-Type': 'application/json'
+			})
+			response.end(JSON.stringify({
+				message: 'Issue with ' + id + " does not exist or not found"
+			}))
+		}else{
+			await IssueModel.deleteIssue(id)
+			response.writeHead(200, {
+				'Content-Type': 'application/json'
+			})
+			response.end("deleted issue: " + id)
+		}
+
+	}catch(error){
+		console.log(error)
+	}
+}
+
 module.exports = {
 	getAllIssues,
 	getIssueByID,
+	deleteIssue,
 }

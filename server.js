@@ -1,12 +1,16 @@
 const http = require('http')
+const IssueController = require('./controllers/issueAPIController')
+
 
 const server = http.createServer((request, response) => {
 	if (request.url === '/api/issues' && request.method === 'GET') {
 		console.log('return all issues')
+		IssueController.getAllIssues(request, response)
 
 	} else if (request.url.match(/\/api\/issues\/\w+/) && request.method === 'GET') {
 		const issueID = request.url.split('/')[3]
 		console.log('return issue with id ' + issueID)
+		IssueController.getIssueByID(request, response, issueID)
 
 	} else if (request.url.match(/\/api\/issues\/\w+/) && request.method === 'DELETE') {
 		const issueID = request.url.split('/')[3]

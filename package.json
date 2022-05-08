@@ -1,0 +1,20 @@
+{
+  "name": "sitemate-saad",
+  "version": "1.0.0",
+  "description": "sitemate saad ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Syed-Saad-Ali-GIT/Sitemate-Saad.git"
+  },
+  "author": "Syed Saad Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Syed-Saad-Ali-GIT/Sitemate-Saad/issues"
+  },
+  "homepage": "https://github.com/Syed-Saad-Ali-GIT/Sitemate-Saad#readme"
+}

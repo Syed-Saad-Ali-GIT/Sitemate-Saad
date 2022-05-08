@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "client": "node client.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,9 @@
   },
   "homepage": "https://github.com/Syed-Saad-Ali-GIT/Sitemate-Saad#readme",
   "dependencies": {
+    "axios": "^0.27.2",
+    "node-fetch": "^2.6.7",
+    "prompt-sync": "^4.2.0",
     "randomstring": "^1.2.2"
   }
 }

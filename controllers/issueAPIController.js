@@ -59,7 +59,7 @@ async function updateIssue(request, response, id) {
 			response.writeHead(200, {
 				'Content-Type': 'application/json'
 			})
-			response.end(JSON.stringify(issue))
+			response.end(JSON.stringify(updateIssue))
 		}
 	}catch(error){
 		console.log(error)

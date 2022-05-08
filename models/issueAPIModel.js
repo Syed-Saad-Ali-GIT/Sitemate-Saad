@@ -14,6 +14,15 @@ async function getByID(id){
     })
 }
 
+async function update(id, newIssueData) {
+    return new Promise((resolve, reject) => {
+        const index = issues.findIndex((p) => p.id === id)
+        issues[index] = {id, ...newIssueData}
+        updateFile('./data/issueData.json', issues);
+        resolve(issues[index])
+    })
+}
+
 async function deleteIssue(id){
 	return new Promise((resolve, reject) => {
         issue = issues.filter((p) => p.id !== id)
@@ -22,8 +31,18 @@ async function deleteIssue(id){
     })
 }
 
+async function newIssue(issue){
+	return new Promise((resolve, reject) => {
+        const newIssue = issue
+        issues.push(newIssue)
+		updateFile('./data/issueData.json', issues);
+        resolve(newIssue)
+    })
+}
 module.exports = {
 	getAll,
 	getByID,
-	deleteIssue,	
+	update,
+	deleteIssue,
+	newIssue
 }

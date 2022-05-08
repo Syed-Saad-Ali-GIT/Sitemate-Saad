@@ -19,9 +19,11 @@ const server = http.createServer((request, response) => {
 	} else if (request.url.match(/\/api\/issues\/\w+/) && request.method === 'PUT') {
 		const issueID = request.url.split('/')[3]
 		console.log('update issue with id ' + issueID)
+		IssueController.updateIssue(request, response, issueID)
 
 	} else if (request.url === '/api/issues' && request.method === 'POST') {
 		console.log('Create an issues')
+		IssueController.createIssue(request, response)
 
 	} else {
 		response.writeHead(404, {

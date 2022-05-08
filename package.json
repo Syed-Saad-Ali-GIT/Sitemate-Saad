@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Syed-Saad-Ali-GIT/Sitemate-Saad/issues"
   },
-  "homepage": "https://github.com/Syed-Saad-Ali-GIT/Sitemate-Saad#readme"
+  "homepage": "https://github.com/Syed-Saad-Ali-GIT/Sitemate-Saad#readme",
+  "dependencies": {
+    "randomstring": "^1.2.2"
+  }
 }
